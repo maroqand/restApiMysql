@@ -4,6 +4,8 @@ import me.nsarvar.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Created by nsarvar on 12/27/17.
  * @Repository annotation allows the component scanning support to find and configure your DAOs and
@@ -17,4 +19,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+    List<User> findOneByUsername(String username);
 }

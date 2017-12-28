@@ -1,8 +1,10 @@
 package me.nsarvar.vo;
 
+import me.nsarvar.util.UsernameConstraint;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Created by nsarvar on 12/27/17.
@@ -17,6 +19,8 @@ public class CreateUserVO {
     private String lastName;
 
     @NotEmpty(message = "Username cannot be null.")
+    @UsernameConstraint
+    @Size(min = 4, max = 11)
     private String username;
     //getters and setters
 
